@@ -10,7 +10,6 @@ public class CheckingAccount implements Account
     private String id;
     private String name;
     private double balance;
-    private static final double LOWBALANCE = 1000.00;
 
     public CheckingAccount(String id, String name, double balance)
     {
@@ -49,7 +48,7 @@ public class CheckingAccount implements Account
                 + String.format("%.2f", oldBalance)
                 + " and the new balance is "
                 + String.format("%.2f", balance) + ".\n");
-            if (balance < LOWBALANCE)
+            if (balance < 1000)
             {
                 System.out.println("Account balance is low.\n");
             }
