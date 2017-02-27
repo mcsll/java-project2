@@ -23,36 +23,40 @@ public class SavingAccount implements Account
         double oldBalance = balance;
         balance += amount;
 
-        String outputString = "Amount of " + String.format("%.2f", amount) 
+        /*String outputString = "Amount of " + String.format("%.2f", amount) 
             + " dollars was added to " + id 
             + " saving account. The old balance was " 
             + String.format("%.2f", oldBalance)
             + " and the new balance is " 
-            + String.format("%.2f", balance) + ".";
+            + String.format("%.2f", balance) + ".";*/
 
-        System.out.println(outputString);
+        System.out.println("Amount of " + String.format("%.2f", amount) 
+            + " dollars was added to " + id 
+            + " saving account. The old balance was " 
+            + String.format("%.2f", oldBalance)
+            + " and the new balance is " 
+            + String.format("%.2f", balance) + ".");
     }
 
     public void withdraw(double amount)
     {
         double oldBalance = balance;
-        String outputString;
+        //String outputString;
 
         if (amount > balance)
         {
-            outputString = "Insufficient funds. The old and new balance are both "
-                + String.format("%.2f", balance);
-            System.out.println(outputString);
+            System.out.println("Insufficient funds. The balance remains "
+                + String.format("%.2f", balance) + ".");
         }
         else
         {
             balance -= amount;
-            outputString = "Amount of " + String.format("%.2f", amount) 
+            System.out.println("Amount of " + String.format("%.2f", amount) 
                 + " dollars was withdrawn from "+ id 
                 + " saving account. The old balance was " 
                 + String.format("%.2f", oldBalance)
-                + " and the new balance is " + String.format("%.2f", balance) + ".";
-            System.out.println(outputString);
+                + " and the new balance is " 
+                + String.format("%.2f", balance) + ".");
         }
     }
 

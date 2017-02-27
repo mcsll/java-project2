@@ -19,7 +19,7 @@ public class TestAccount
         
         Account a2 = new SavingAccount("a6789", "Halston", 0.00);
         a2.deposit(750.00);
-        a2.withdraw(25.00);
+        a2.withdraw(1000.00);
         System.out.println("Account balance: " + 
                 String.format("%.2f", a2.getBalance()));
         System.out.println("Account ID: " + 
