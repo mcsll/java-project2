@@ -1,6 +1,6 @@
 /**
  * CS152 Section 01, Project #2
- * SavingAccount implements class Account as a Saving Account
+ * SavingAccount class implements Account interface as a Saving Account
  * @author (Matthew Sullivan) 
  * @version (Feb 27, 2017)
  */
@@ -22,27 +22,17 @@ public class SavingAccount implements Account
     {
         double oldBalance = balance;
         balance += amount;
-
-        /*String outputString = "Amount of " + String.format("%.2f", amount) 
-            + " dollars was added to " + id 
-            + " saving account. The old balance was " 
+        System.out.println("Amount of " + String.format("%.2f", amount)
+            + " dollars was added to " + id
+            + " saving account. The old balance was "
             + String.format("%.2f", oldBalance)
-            + " and the new balance is " 
-            + String.format("%.2f", balance) + ".";*/
-
-        System.out.println("Amount of " + String.format("%.2f", amount) 
-            + " dollars was added to " + id 
-            + " saving account. The old balance was " 
-            + String.format("%.2f", oldBalance)
-            + " and the new balance is " 
+            + " and the new balance is "
             + String.format("%.2f", balance) + ".");
     }
 
     public void withdraw(double amount)
     {
         double oldBalance = balance;
-        //String outputString;
-
         if (amount > balance)
         {
             System.out.println("Insufficient funds. The balance remains "

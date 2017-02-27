@@ -1,11 +1,9 @@
 /**
  * CS152 Section 01, Project #2
- * CheckingAccount implements class Account as a Checking Account
+ * CheckingAccount class implements Account interface as a Checking Account
  * @author (Matthew Sullivan) 
  * @version (Feb 27, 2017)
  */
-
-//import java.util.*;
 
 public class CheckingAccount implements Account
 {
@@ -25,36 +23,31 @@ public class CheckingAccount implements Account
     {
         double oldBalance = balance;
         balance += amount;
-
-        String outputString = "Amount of " + String.format("%.2f", amount) 
-            + " dollars was added to "+ id 
-            + " checking account. The old balance was " 
+        System.out.println("Amount of " + String.format("%.2f", amount)
+            + " dollars was added to "+ id
+            + " checking account. The old balance was "
             + String.format("%.2f", oldBalance)
-            + " and the new balance is " + String.format("%.2f", balance) + ".";
-
-        System.out.println(outputString);
+            + " and the new balance is "
+            + String.format("%.2f", balance) + ".");
     }
 
     public void withdraw(double amount)
     {
         double oldBalance = balance;
-        String outputString;
-
         if (amount > balance)
         {
-            outputString = "Insufficient funds. The old and new balance are both "
-                + String.format("%.2f", balance);
-            System.out.println(outputString);
+            System.out.println("Insufficient funds. The balance remains "
+                + String.format("%.2f", balance) + ".");
         }
         else
         {
             balance -= amount;
-            outputString = "Amount of " + String.format("%.2f", amount) 
-                + " dollars was withdrawn from " + id 
-                + " checking account. The old balance was " 
+            System.out.println("Amount of " + String.format("%.2f", amount)
+                + " dollars was withdrawn from " + id
+                + " checking account. The old balance was "
                 + String.format("%.2f", oldBalance)
-                + " and the new balance is " + String.format("%.2f", balance) + ".";
-            System.out.println(outputString);
+                + " and the new balance is "
+                + String.format("%.2f", balance) + ".");
             if (balance < LOWBALANCE)
             {
                 System.out.println("Account balance is low.");
