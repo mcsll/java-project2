@@ -24,10 +24,10 @@ public class SavingAccount implements Account
         balance += amount;
         System.out.println("Amount of " + String.format("%.2f", amount)
             + " dollars was added to " + id
-            + " saving account. The old balance was "
+            + " saving account.\nThe old balance was "
             + String.format("%.2f", oldBalance)
             + " and the new balance is "
-            + String.format("%.2f", balance) + ".");
+            + String.format("%.2f", balance) + ".\n");
     }
 
     public void withdraw(double amount)
@@ -35,18 +35,19 @@ public class SavingAccount implements Account
         double oldBalance = balance;
         if (amount > balance)
         {
-            System.out.println("Insufficient funds. The balance remains "
-                + String.format("%.2f", balance) + ".");
+            System.out.println("Insufficient funds on saving account.\n"
+                + "The old and new balance are both "
+                + String.format("%.2f", balance) + ".\n");
         }
         else
         {
             balance -= amount;
             System.out.println("Amount of " + String.format("%.2f", amount) 
                 + " dollars was withdrawn from "+ id 
-                + " saving account. The old balance was " 
+                + " saving account.\nThe old balance was "
                 + String.format("%.2f", oldBalance)
                 + " and the new balance is " 
-                + String.format("%.2f", balance) + ".");
+                + String.format("%.2f", balance) + ".\n");
         }
     }
 
